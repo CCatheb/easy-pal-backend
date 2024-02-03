@@ -25,10 +25,11 @@ class LoggerFormatter(logging.Formatter):
         formatter = logging.Formatter(log_format)
         return formatter.format(record)
 
-class Logger():
+
+class CustomLogger():
 
     @staticmethod
-    def get_logger(name: str, level: logging._Level = logging.DEBUG) -> logging.Logger:
+    def get_logger(name: str, level = logging.DEBUG) -> logging.Logger:
 
         # Instantiate a logger
         logger = logging.getLogger(name)
