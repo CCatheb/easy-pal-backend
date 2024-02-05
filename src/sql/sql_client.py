@@ -10,6 +10,12 @@ class DatabaseManager:
     """ This class is a dabase manager, used to connect and execute queries on the database specified in the config file."""
 
     def __init__(self, config_file: str = "conf/config.ini", max_connections: int = 5) -> None:
+        """Instantiates a DatabaseManager to handle all database connections
+
+        Args:
+            config_file (str, optional): Configuration file for database infos. Defaults to "conf/config.ini".
+            max_connections (int, optional): Maximum amount of connections. Defaults to 5.
+        """
 
         self.__logger = CustomLogger.get_logger("DBMAN")
         
@@ -29,7 +35,15 @@ class DatabaseManager:
             database = self.__conf.get('sql', 'database')
         )
 
-    def execute_query(self, sql_query: str) :
+    def execute_query(self, sql_query: str) -> str:
+        """This method executes a SQL query on the database.
+
+        Args:
+            sql_query (str): SQL query
+
+        Returns:
+            result (str): Result of the SQL query
+        """
 
         connection = self.connection_pool.getconn()
         cursor = connection.cursor()
