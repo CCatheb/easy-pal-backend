@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="Easy PAL Backend",
+    name="easy_pal_backend",
     version="0.0.1",
     author="Cédric Cathebras",
     author_email="cathebras-cedric@orange.fr",
