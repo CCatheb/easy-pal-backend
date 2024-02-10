@@ -1,6 +1,6 @@
 import configparser
 
-import psycopg2
+import psycopg2.pool
 
 from pal_utils.logger_factory import CustomLogger
 
@@ -39,7 +39,6 @@ class DatabaseManager:
 
         Args:
             sql_query (str): SQL query
-
         Returns:
             result (str): Result of the SQL query
         """
