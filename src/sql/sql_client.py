@@ -1,4 +1,3 @@
-from psycopg2 import pool
 import configparser
 
 import psycopg2
@@ -18,7 +17,7 @@ class DatabaseManager:
         """
 
         self.__logger = CustomLogger.get_logger("DBMAN")
-        
+
         # Get the config informations from the config.ini file
         try:
             self.__conf = configparser.ConfigParser()
@@ -29,10 +28,10 @@ class DatabaseManager:
 
         self.connection_pool = psycopg2.pool.SimpleConnectionPool(
             1, max_connections,
-            user = self.__conf.get('sql', 'user'),
-            host = self.__conf.get('sql', 'host'),
-            port = self.__conf.get('sql', 'port'),
-            database = self.__conf.get('sql', 'database')
+            user=self.__conf.get('sql', 'user'),
+            host=self.__conf.get('sql', 'host'),
+            port=self.__conf.get('sql', 'port'),
+            database=self.__conf.get('sql', 'database')
         )
 
     def execute_query(self, sql_query: str) -> str:

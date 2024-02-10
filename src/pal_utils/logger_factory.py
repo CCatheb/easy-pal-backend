@@ -1,5 +1,6 @@
 import logging
 
+
 class LoggerFormatter(logging.Formatter):
 
     default_formatter = "%(asctime)s - [%(levelname)s] [%(name)s]: %(msg)s"
@@ -29,7 +30,7 @@ class LoggerFormatter(logging.Formatter):
 class CustomLogger():
 
     @staticmethod
-    def get_logger(name: str, level = logging.DEBUG) -> logging.Logger:
+    def get_logger(name: str, level=logging.DEBUG) -> logging.Logger:
 
         # Instantiate a logger
         logger = logging.getLogger(name)
@@ -43,4 +44,3 @@ class CustomLogger():
         logger.addHandler(ch)
 
         return logger
-
