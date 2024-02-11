@@ -16,7 +16,7 @@ class DatabaseManagerTests(unittest.TestCase):
 
         # Exécuter une requête SQL
         sql_query = "SELECT * FROM example_table;"
-        result = self.sql_client.execute_query(sql_query)
+        db_manager.execute_query(sql_query)
 
         # Vérifier que les méthodes appropriées ont été appelées
         mock_connect.assert_called_once()
